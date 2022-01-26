@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login<!--@ViewBag.Title--></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="/Navbar.css" rel="stylesheet" />
+    <link href="/Home.css" rel="stylesheet" />
+    <link href="/Login.css" rel="stylesheet" />
+    <link href="/Product.css" rel="stylesheet" />
+</head>
+<body>
+    <div>
+        <nav>
+            <ul class="navbar-one">
+                <li class="navbar-one-item">
+                    <h3 class="navbar-logo"><a href="#">THE BOOK STORE</a></h3> <!--@Url.Action("Home", "Shop")-->
+                </li>
+                <li class="navbar-one-item">
+                    <form class="search" method="get" action=""><!--@Url.Action("Search", "Shop")-->
+                        <button class="search-btn" type="submit">Search</button>
+                        <input type="text" class="search-text" name="Searched" placeholder="search your book title here ...">
+                    </form>
+                </li>
+                <li class="navbar-one-item">
+                    <a href="#">Orders</a><!--@Url.Action("History", "Order")-->
+                </li>
+                <li class="navbar-one-item">
+                    <a href="#">Cart</a><!--@Url.Action("Watch", "Cart")"-->
+                </li>
+                <li class="navbar-one-item">
+                    <a href="#">Seller's Hub</a><!--@Url.Action("Login", "Account")-->
+                </li>
+                <li class="navbar-one-item">
+                    <a href="#">Login</a><!--@Url.Action("Login", "Account")-->
+                </li>
+            </ul>
+        </nav>
+        <nav>
+            <ul class="navbar-two">
+                <li class="navbar-two-item">
+                    <a href="#">Autobiography</a><!--@Url.Action("Category", "Shop",new {category="Autobiography"})-->
+                </li>
+                <li class="navbar-two-item">
+                    <a href="">Business</a><!--@Url.Action("Category", "Shop",new {category="Business"})-->
+                </li>
+                <li class="navbar-two-item">
+                    <a href="">Comics</a><!--@Url.Action("Category", "Shop",new {category="Comics"})-->
+                </li>
+                <li class="navbar-two-item">
+                    <a href="">History</a><!--@Url.Action("Category", "Shop",new {category="History"})-->
+                </li>
+                <li class="navbar-two-item">
+                    <a href="">Self-Help</a><!--@Url.Action("Category", "Shop",new {category="Self-Help"})-->
+                </li>
+                <li class="navbar-two-item">
+                    <a href="">Story</a><!--@Url.Action("Category", "Shop",new {category="Story"})-->
+                </li>
+            </ul>
+        </nav>
+        <div>
+            <!--@RenderBody()-->
+        </div>
+        <div class="main-product">
+            <div class="main-product-image">
+                <img src="/AttitudeIsEverything.jpg" alt="image">
+            </div>
+            <div class="main-product-content">
+                <h2>Attitude is everything</h2>
+                <p>By : Jeff Keller</p>
+                <p>Category : Self Help</p>
+                <p><strong>Rs. 150/-</strong></p>
+                <input type="submit" class="btn btn-success" value="Confirm purchase">
+                <h5 class="purchase-success-message">Book Purchased Successfully</h5>
+                <p class="Successfull-navigation"><a href="#">Click here to shop more</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
