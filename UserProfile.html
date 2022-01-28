@@ -6,7 +6,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="/Navbar.css" rel="stylesheet" />
     <link href="/Home.css" rel="stylesheet" />
-    <link href="/Login.css" rel="stylesheet" />
+    <link href="/UserProfile.css" rel="stylesheet" />
 
 </head>
 <body>
@@ -58,34 +58,46 @@
                 </li>
             </ul>
         </nav>
-        <div>
-            <!--@RenderBody()-->
+<div>
+<!--     ---------------------------------------------------------------------------------------------------------------------     -->
+<div class="profile">
+    <div class="profile-aside">
+        <div class="profile-name-section">
+            <p class="profile-name-hello">Hello</p>
+            <p class="profile-name">@Model.Name</p>
+            <hr>
         </div>
-        <div class="content">
-            <div class="logo">
-                <h4>THE BOOK STORE</h4>
-                <h4>Login</h4>
-                <p>Get access to your Orders, Recommendations and Carts</p>
-            </div>
-            <div class="sub-content">
-                <div class="login-form">
-                    <form method="post" action="#"><!--@Url.Action("Login", "Account")-->
-                        <div class="input-container">
-                            <input type="text" placeholder="Enter your username" id="Username" name="Username" value=><!--@Model.Username-->
-                            <p class="error-message"></p><!--@ViewBag.UserIdErrorMessage-->
-                        </div>
-                        <div class="input-container">
-                            <input type="password" placeholder="Enter your password" id="Password" name="Password">
-                            <p class="error-message"></p><!--@ViewBag.PasswordErrorMessage-->
-                        </div>
-                        <input type="submit" class="btn  submit-btn" value="Login">
-                    </form>
-                </div>
-                <div class="create-link">
-                    <p>Don't have an account? <a href="#">Create new account</a></p><!--@Url.Action("Create", "Account")-->
-                </div>
-            </div>
+        <div class="profile-navigation">
+            <p><a href="#">Profile information</a></p>
+            <p><a href="#">Payment information</a></p>
         </div>
     </div>
-</body>
-</html>
+    <div class="profile-details">
+        <h5>Personal info</h5><hr>
+        <div class="personal-info">
+            <div class="profile-detail-pair">
+                <label class="profile-detail-label">Username</label>
+                <p class="profile-detail-value">@Model.Username</p>
+            </div>
+            <div class="profile-detail-pair">
+                <label class="profile-detail-label">Password</label>
+                <p class="profile-detail-value">@Model.Password</p>
+            </div>
+        </div>
+        <h5>Contact info</h5><hr>
+        <div class="contact-info">
+            <div class="profile-detail-pair">
+                <label class="profile-detail-label">Email</label>
+                <p class="profile-detail-value">@Model.Email</p>
+            </div>
+            <div class="profile-detail-pair">
+                <label class="profile-detail-label">Mobile Number</label>
+                <p class="profile-detail-value">@Model.MobileNumber</p>
+            </div>
+        </div>
+        <div class="profile-options">
+            <p><a href="/Profile/Edit" class="profile-edit">Edit your profile</a></p>
+            <p><a href="/Profile/Delete" class="profile-delete">Delete your profile</a></p>
+        </div>
+    </div>
+</div>
